@@ -3,4 +3,73 @@ For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/layouts
 #}
 
-{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{%- set assetPath = '/extension-assets/govuk-frontend/govuk/assets' -%}
+{%- set html = "<p></p>" %}
+{% extends "govuk/template.njk" %}
+
+{% block head %}
+  {% block meta %}{% endblock %}
+  {% block stylesheets %}
+    {% include "govuk-prototype-kit/includes/stylesheets.html" %}
+  {% endblock %}
+{% endblock %}
+
+{% block pageTitle %}
+  Findability Prototype
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "#",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "#1",
+        text: "Topics"
+      },
+      {
+        href: "#2",
+        text: "Government activity"
+      },
+      {
+        href: "#3",
+        html: html
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% if (GOVUKPrototypeKit.isDevelopment) %}
+  {% set footerItems = [
+    {
+      href: "/manage-prototype",
+      text: "Manage your prototype"
+    }, {
+      href: "/manage-prototype/clear-data",
+      text: "Clear data"
+    }
+  ] %}
+{% else %}
+  {% set footerItems = [
+    {
+      href: "/manage-prototype/clear-data",
+      text: "Clear data"
+    }
+  ] %}
+{% endif %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: footerItems,
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "govuk-prototype-kit/includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}

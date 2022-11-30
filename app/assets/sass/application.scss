@@ -1,6 +1,100 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
+
+.region-spacing {
+    padding: 1.8rem;
+}
+
+.thick-line {
+    border-bottom: 5px solid black;
+}
+
+.logo {
+    border-left: 2px solid black;
+    margin-bottom: 8rem;
+    margin-top: -1rem;
+    padding-left: 8px;
+}
+
+.logo > .govuk-body-m {
+    font-family: HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.social-image {
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.social-wrapper {
+    display: flex;
+}
+
+.social-wrapper a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.social-wrapper img {
+    margin-right: .5rem;
+}
+
+.pipe-spacing {
+    color: #b1b4b6;
+    padding: 0 5px;
+}
+
+.language-separator {
+    padding-top: 5px;
+}
+
+.sidebar-row {
+    display: flex;
+}
+
+.sidebar-row-title {
+    flex: 1;
+}
+.sidebar-row-value {
+    flex: 4;
+}
+
+#navigation {
+    float: right;
+}
+
+#navigation > li {
+    border-left: 1px solid grey;
+    padding: 5px 20px;
+    margin-right: 0;
+}
+
+#navigation > li:before {
+    transform: translateY(-35%) rotate(45deg) scale(1);
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    margin: 0 10px 0 2px;
+    vertical-align: middle;
+    width: 8px;
+}
+
+#navigation > li:last-child {
+    background: #1d70b8;
+    padding: 15px 0px;
+    margin-top: -1rem;
+}
+
+#navigation > li:last-child::before {
+    display: none;
+}
