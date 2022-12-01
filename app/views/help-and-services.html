@@ -1,0 +1,273 @@
+{% extends "layouts/main.html" %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block stylesheets %}
+    {{ super() }}
+    <link href="/public/css/step-nav.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block header %}
+    {{ super() }}
+    <div class="govuk-width-container">
+        {{ govukPhaseBanner({
+            tag: {
+            text: "beta"
+            },
+            html: 'This is a test version of the layout of this page.'
+        }) }}
+
+        {{ govukBreadcrumbs({
+            items: [
+            {
+                text: "Home",
+                href: "/"
+            },
+            {
+                text: "Help and services around the world",
+                href: "#"
+            }
+            ]
+        }) }}
+    </div>
+{% endblock %}
+
+{% block pageScripts %}
+{{ super() }}
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+  <script src="/public/javascripts/step-by-step-nav.js"></script>
+  <script src="/public/javascripts/step-by-step-polyfills.js"></script>
+  <script type="text/javascript">
+    var $element = document.querySelector('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+  </script>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">UK help and services in Spain</h1>
+
+        <p class="govuk-caption-l">
+            Services if you're visiting, studying, working or living in Spain. Includes information about trading with and doing business in the UK and Spain, and your rights after the UK’s exit from the EU.
+        </p>
+
+        <ul class="subscription-links govuk-!-margin-top-8">
+          <li>
+            <a href="#" class="subscription-links__item--link govuk-link--no-underline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="15.75" class="subscription-links__icon" focusable="false" fill="currentColor" aria-hidden="true"><path d="M19.687 0H1.312C.589 0 0 .587 0 1.313v13.124c0 .726.588 1.313 1.313 1.313h18.374c.725 0 1.313-.587 1.313-1.313V1.313C21 .587 20.412 0 19.687 0zm-2.625 2.625L10.5 7.875l-6.563-5.25h13.126zm1.313 10.5H2.625V3.937L10.5 10.5l7.875-6.563v9.188z"></path>
+              </svg>
+              <span class="govuk-!-font-weight-bold">Get emails for this topic</span>
+              <span class="govuk-visually-hidden">UK help and services in Spain</span>
+            </a>
+          </li>
+          <li>
+            <button class="govuk-link govuk-link--no-underline subscription-links__item--button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="subscription-links__icon" focusable="false" fill="currentColor" aria-hidden="true"><path d="M1.996 11A2 2 0 0 0 0 12.993c0 1.101.895 1.99 1.996 1.99 1.106 0 2-.889 2-1.99a2 2 0 0 0-2-1.993zM.002 5.097V7.97c1.872 0 3.632.733 4.958 2.059A6.984 6.984 0 0 1 7.015 15h2.888c0-5.461-4.443-9.903-9.9-9.903zM.006 0v2.876c6.676 0 12.11 5.44 12.11 12.124H15C15 6.731 8.273 0 .006 0z"></path>
+              </svg>
+              <span class="govuk-!-font-weight-bold">Subscribe to feed</span>
+            </button>
+          </li>
+        </ul>
+        <section>
+              <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all actions" data-hide-all-text="Hide all actions">
+                <ol class="app-step-nav__steps">
+                  <li class="app-step-nav__step js-step" id="emergency-help-for-british" >
+                    <article class="app-step-nav__header js-toggle-panel" data-position="1">
+                      <div class="app-step-nav__title">
+                          <span class="js-step-title">Emergency help for British nationals</span>
+                          <p class="js-step-hint">Get help if you're the victim of crime, you've been arrested, or are affected by a crisis abroad.</p>
+                      </div>
+                    </article>
+
+                    <article class="app-step-nav__panel js-panel js-hidden" id="step-panel-emergency-help-for-british-1">
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">British Consulate Alicante</a>
+                      <p>The British Consulate in Alicante represents the UK government in Alicante and Murcia regions of Spain.</p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">British Consulate General Barcelona</a>
+                      <p>The British Consulate General in Barcelona represents the UK government in Catalonia, Aragon and Andorra.</p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">British Consulate General Madrid</a>
+                      <p>The British Consulate General in Madrid represents the UK government in Madrid, northern and central Spain.</p>
+
+                    </article>
+
+                  </li>
+
+                  <li class="app-step-nav__step js-step" id="passports-and-emergency" >
+                    <article class="app-step-nav__header js-toggle-panel" data-position="2">
+                      <div class="app-step-nav__title">
+                          <span class="js-step-title">Passports and emergency travel documents</span>
+                          <p class="js-step-hint">Includes how to cancel a lost passport, renew a passport and apply for an emergency travel document.</p>
+                      </div>
+                    </article>
+
+                    <article class="app-step-nav__panel js-panel js-hidden" id="step-panel-passports-and-emergency-2">
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Apply for or renew a British passport if you're visiting the UK</a>
+                      <p>
+                        You can apply for or renew a British passport while you're visiting the UK - as long as you expect to be in the UK for long enough
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Cancel a lost or stolen passport</a>
+                      <p>
+                        What you need to do if your passport has been lost or stolen and you need to travel urgently - emergency travel document and replacement passport.
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Get an emergency travel document</a>
+                      <p>
+                        Apply for an emergency travel document if you're outside the UK and have not got a valid British passport - apply online, how to apply, fee, timings
+                      </p>
+
+                    </article>
+
+                  </li>
+
+                  <li class="app-step-nav__step js-step" id="travelling-to-spain" >
+                    <article class="app-step-nav__header js-toggle-panel" data-position="3">
+                      <div class="app-step-nav__title">
+                        <span class="js-step-title">Travelling to Spain</span>
+                        <p class="js-step-hint">Includes travel advice and how to get married abroad.</p>
+                      </div>
+                    </article>
+
+                    <article class="app-step-nav__panel js-panel js-hidden" id="step-panel-travelling-to-spain-3">
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Apply for a UK Global Health Insurance Card (GHIC)</a>
+                      <p>
+                        Applying for your free Global Health Insurance Card (GHIC) or European Health Insurance Card (EHIC): who can apply and where you can use them.
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Getting married abroad</a>
+                      <p>
+                        Requirements, paperwork and processes for weddings and civil partnerships overseas - registration, restrictions, fees
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Healthcare for UK nationals visiting Spain</a>
+                      <p>
+                        How to get state healthcare when you’re on holiday or travelling to Spain.
+                      </p>
+                    </article>
+
+                  </li>
+
+                  <li class="app-step-nav__step js-step" id="coming-to-the-uk" >
+                    <article class="app-step-nav__header js-toggle-panel" data-position="4">
+                      <div class="app-step-nav__title">
+                        <span class="js-step-title">Coming to the UK</span>
+                        <p class="js-step-hint">Get a visa to study, work or visit the UK.</p>
+                      </div>
+                    </article>
+
+                    <article class="app-step-nav__panel js-panel js-hidden" id="step-panel-coming-to-the-uk-4">
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Check if you need a UK visa</a>
+                      <p>
+                        You may need a visa to come to the UK to visit, study or work.
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Contact UK Visas and Immigration for help</a>
+                      <p>
+                        How to contact UK Visas and Immigration (UKVI) for help with your application or immigration account, from inside and outside the UK.
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Get your visa, immigration or citizenship documents back</a>
+                      <p>
+                        Get your documents returned if you've made a UK visa, immigration or citizenship application but need them back urgently
+                      </p>
+                    </article>
+
+                  </li>
+
+                  <li class="app-step-nav__step js-step" id="living-in-spain" >
+                    <article class="app-step-nav__header js-toggle-panel" data-position="5">
+                      <div class="app-step-nav__title">
+                        <span class="js-step-title">Living in Spain</span>
+                        <p class="js-step-hint">Guidance on your rights after the UK’s exit from the EU, accessing healthcare, getting a document legalised, English-speaking lawyers, how to vote abroad.</p>
+                      </div>
+                    </article>
+
+                    <article class="app-step-nav__panel js-panel js-hidden" id="step-panel-living-in-spain-5">
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Apply for a UK Global Health Insurance Card (GHIC)</a>
+                      <p>
+                        Applying for your free Global Health Insurance Card (GHIC) or European Health Insurance Card (EHIC): who can apply and where you can use them.
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Get your document legalised</a>
+                      <p>
+                        Use the online service to get a UK document legalised.
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Healthcare for UK nationals living in Spain</a>
+                      <p>
+                        How to get state healthcare if you live, work or study in Spain.
+                      </p>
+                    </article>
+
+                  </li>
+
+                  <li class="app-step-nav__step js-step" id="tax-benefits-pensions" >
+                    <article class="app-step-nav__header js-toggle-panel" data-position="6">
+                        <div class="app-step-nav__title">
+                          <span class="js-step-title">Tax, benefits, pensions and working abroad</span>
+                          <p class="js-step-hint">Includes how to pay tax, claim State Pension and get tax credits abroad.</p>
+                        </div>
+                    </article>
+
+                    <article class="app-step-nav__panel js-panel js-hidden" id="step-panel-tax-benefits-pensions-6">
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Claiming benefits if you live, move or travel abroad</a>
+                      <p>
+                        Benefits you can claim if you go abroad and countries with social security arrangements with the UK
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">Moving or retiring abroad</a>
+                      <p>
+                        What you need to know if you move or retire abroad - tax, pensions, voting and contacting your local council
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">National Insurance if you work abroad</a>
+                      <p>
+                        Contact HM Revenue and Customs (HMRC) to find out if you need to pay National Insurance when you work abroad
+                      </p>
+                    </article>
+
+                  </li>
+
+                  <li class="app-step-nav__step js-step" id="birth-death-marriage" >
+                    <article class="app-step-nav__header js-toggle-panel" data-position="7">
+                      <div class="app-step-nav__title">
+                        <span class="js-step-title">Birth, death and marriage abroad</span>
+                        <p class="js-step-hint">Includes contact details, opening hours and consular fees and local services.</p>
+                      </div>
+                    </article>
+
+                    <article class="app-step-nav__panel js-panel js-hidden" id="step-panel-birth-death-marriage-7">
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">British Consulate Alicante</a>
+                      <p>
+                        The British Consulate in Alicante represents the UK government in Alicante and Murcia regions of Spain.
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">British Consulate General Barcelona</a>
+                      <p>
+                        The British Consulate General in Barcelona represents the UK government in Catalonia, Aragon and Andorra.
+                      </p>
+
+                      <a href="#" class="govuk-link govuk-!-font-weight-bold">British Consulate General Madrid</a>
+                      <p>
+                        The British Consulate General in Madrid represents the UK government in Madrid, northern and central Spain.
+                      </p>
+                    </article>
+
+                  </li>
+                </ol>
+              </div>
+          </section>
+    </div>
+</div>
+
+{% endblock %}
