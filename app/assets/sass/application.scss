@@ -15,7 +15,7 @@
 
 .logo {
     border-left: 2px solid black;
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
     margin-top: -1rem;
     padding-left: 8px;
 }
@@ -91,10 +91,72 @@
 
 #navigation > li:last-child {
     background: #1d70b8;
-    padding: 15px 0px;
+    padding: 15px 20px 15px 15px;
     margin-top: -1rem;
+    border-left: 0;
 }
 
 #navigation > li:last-child::before {
     display: none;
+}
+
+#search-image {
+    position:relative;
+    display:inline-block;
+    background: #1d70b8;
+    border-radius: 30px;
+    height: 10px;
+    width: 10px;
+    border: 3px solid #fff;
+}
+
+#search-image:after {
+    content: "";
+    height: 2.5px;
+    width: 11px;
+    background: #fff;
+    position:absolute;
+    top:12px;
+    left:7px;
+    transform: rotate(45deg);
+}
+
+.mobile-show-visibility {
+    visibility: hidden;
+}
+
+.mobile-hide {
+    display: block;
+}
+
+@media screen and (max-width: 770px) {
+    #navigation > li:last-child {
+        display: none;
+    }
+
+    #navigation {
+        float: initial;
+    }
+
+    #navigation > li {
+        border-left: 0;
+        padding: 10px 0;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+
+    .mobile-show-visibility {
+        visibility: visible;
+    }
+
+    .sidebar-row-value {
+        flex: 7;
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+
 }
